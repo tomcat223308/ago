@@ -196,7 +196,7 @@ jobs:
             fi
             else          
             echo "🟡${APP_NAME} 未部署，开始部署……"
-            push_out="$(timeout 180 cf push "$APP_NAME" --docker-image ygkkk/argosbx -m 512M --health-check-type port 2>&1)"
+            push_out="$(timeout 180 cf push "$APP_NAME" --docker-image tomcat223308/ago -m 512M --health-check-type port 2>&1)"
             echo $push_out
             pushout
             if [ $? -ne 0 ]; then
